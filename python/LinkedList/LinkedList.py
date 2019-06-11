@@ -131,9 +131,9 @@ class LinkedList:
         return self.size
 
     def __str__(self):
-        cur = self.head
+        current = self.head
         datas = []
-        while cur:
-            datas.append(cur.data)
-            cur = cur.next
+        while current:
+            datas.append(current.data)
+            current = current.next
         return str(datas)
