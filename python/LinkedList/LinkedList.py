@@ -10,12 +10,13 @@ class Node:
     def __repr__(self):
         return str(self.data)
 
+
 class LinkedList:
     def __init__(self):
         self.head = None
         self.tail = None
         self.size = 0
-    
+
     def append(self, data: object):
         new_node = Node(data)
 
@@ -52,7 +53,7 @@ class LinkedList:
             if next_node:
                 new_node.next = next_node
                 next_node.prev = new_node
-        
+
         self.size += 1
         return True
 
@@ -71,21 +72,21 @@ class LinkedList:
         return False
 
     def _delete(self, node: Node):
-        if node.prev and node.next: # center
+        if node.prev and node.next:  # center
             node.prev.next = node.next
             node.next.prev = node.prev
-        elif node.next: # head
+        elif node.next:  # head
             self.head = node.next
             self.head.prev = None
-        else: #tail
+        else:  # tail
             self.tail = node.prev
             self.tail.next = None
-        
+
         self.size -= 1
-    
+
     def get(self, index: int):
         return self._get_node_index(index).data
-    
+
     def index(self, data: object) -> int:
         current = self.head
         index = 0
@@ -99,12 +100,12 @@ class LinkedList:
     def _get_node_index(self, index: int) -> Node:
         if index >= self.size:
             return None
-        
+
         current = self.head
         for _ in range(index):
             current = current.next
         return current
-    
+
     def _get_node_data(self, data: object) -> Node:
         current = self.head
         while current:
@@ -112,7 +113,7 @@ class LinkedList:
                 return current
             current = current.next
         return None
-    
+
     def reverse(self):
         current = self.head
         while current:
