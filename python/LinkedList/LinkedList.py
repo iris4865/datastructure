@@ -23,11 +23,10 @@ class LinkedList:
         if self.head:
             self.tail.next = new_node
             new_node.prev = self.tail
-            self.tail = new_node
         else:
             self.head = new_node
-            self.tail = new_node
 
+        self.tail = new_node
         self.size += 1
 
     def insert(self, data: object, index: int) -> bool:
