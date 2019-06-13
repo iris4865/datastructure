@@ -95,6 +95,9 @@ class LinkedList:
             current = current.next
             index += 1
         return -1
+    
+    def count(self) -> int:
+        return self.size
 
     def _get_node_index(self, index: int) -> Node:
         if index >= self.size:
