@@ -34,6 +34,9 @@ class Stack:
     def is_empty(self) -> bool:
         return self.size == 0
 
+    def count(self) -> int:
+        return self.size
+
     def __len__(self):
         return self.size
 
