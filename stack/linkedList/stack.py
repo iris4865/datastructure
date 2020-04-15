@@ -30,6 +30,10 @@ class Stack:
 
     def peek(self) -> object:
         return self.head.data
+    
+    def clear(self):
+        self.head = None
+        self.size = 0
 
     def is_empty(self) -> bool:
         return self.size == 0
@@ -42,6 +46,6 @@ class Stack:
         while current is not None:
             yield current.data
             current = current.next
-
-    def __str__(self):
-        return str([data for data in self])
+    
+    def __reversed__(self):
+        return reversed([data for data in self])

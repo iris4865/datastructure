@@ -1,7 +1,6 @@
 class Node:
     def __init__(self, data: object):
         self.data = data
-        self.prev = None
         self.next = None
 
     def __str__(self):
@@ -35,10 +34,19 @@ class Queue:
         self.size -= 1
         return data
 
+    def peek(self) -> object:
+        return self.head.data
+
     def clear(self):
         self.head = None
         self.tail = None
         self.size = 0
+
+    def is_empty(self) -> bool:
+        return self.size == 0
+
+    def __len__(self) -> int:
+        return self.size
 
     def __iter__(self):
         current = self.head
@@ -48,6 +56,3 @@ class Queue:
     
     def __reversed__(self):
         return reversed([data for data in self])
-
-    def __len__(self) -> int:
-        return self.size

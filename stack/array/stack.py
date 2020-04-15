@@ -10,9 +10,12 @@ class Stack:
 
     def peek(self) -> object:
         return self.head[-1]
+    
+    def clear(self):
+        self.head = []
 
     def is_empty(self) -> bool:
-        return self.head == None
+        return len(self.head) == 0
 
     def __len__(self):
         return len(self.head)
@@ -22,3 +25,6 @@ class Stack:
 
     def __str__(self):
         return str([data for data in self])
+    
+    def __reversed__(self):
+        return reversed(self.head)
