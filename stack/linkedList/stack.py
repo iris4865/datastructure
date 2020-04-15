@@ -34,9 +34,6 @@ class Stack:
     def is_empty(self) -> bool:
         return self.size == 0
 
-    def count(self) -> int:
-        return self.size
-
     def __len__(self):
         return self.size
 
@@ -47,9 +44,4 @@ class Stack:
             current = current.next
 
     def __str__(self):
-        current = self.head
-        datas = []
-        while current:
-            datas.append(current.data)
-            current = current.next
-        return str(datas)
+        return str([data for data in self])
